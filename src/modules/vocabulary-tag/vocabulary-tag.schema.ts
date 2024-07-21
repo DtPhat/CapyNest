@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
+import { HydratedDocument, Schema as MongooseSchema } from 'mongoose';
 
 export type VocabularyTagDocument = HydratedDocument<VocabularyTag>;
 
@@ -18,5 +18,9 @@ export class VocabularyTag {
     picture: string
 }
 
-export const VocabularyTagSchema = SchemaFactory.createForClass(VocabularyTag);
-VocabularyTagSchema.set('suppressReservedKeysWarning', true);
+// export const VocabularyTagSchema = SchemaFactory.createForClass(VocabularyTag);
+// VocabularyTagSchema.set('suppressReservedKeysWarning', true);
+const schemaDefinition = SchemaFactory.createForClass(VocabularyTag);
+export const VocabularyTagSchema = new MongooseSchema(schemaDefinition.obj, {
+    suppressReservedKeysWarning: true,
+});
