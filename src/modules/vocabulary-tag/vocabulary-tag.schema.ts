@@ -19,3 +19,4 @@ export class VocabularyTag {
 }
 
 export const VocabularyTagSchema = SchemaFactory.createForClass(VocabularyTag);
+VocabularyTagSchema.set('suppressReservedKeysWarning', true);
