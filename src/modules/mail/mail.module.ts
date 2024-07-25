@@ -38,13 +38,13 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     ],
     providers: [
         {
-            provide: 'MAIL_SERVICE_PHATTV',
+            provide: 'MAIL_SERVICE',
             useClass: MailService,
         }
     ],
     exports: [
         {
-            provide: 'MAIL_SERVICE_PHATTV',
+            provide: 'MAIL_SERVICE',
             useClass: MailService,
         }
     ],

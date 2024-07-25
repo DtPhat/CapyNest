@@ -10,7 +10,7 @@ import {FilterVideoRequestDTO} from "./dtos/requests/filter-video.dto"
 export class VideoController {
 
     constructor(
-        @Inject('VIDEO_SERVICE_PHATTV') private readonly VideoService: VideoService,
+        @Inject('VIDEO_SERVICE') private readonly VideoService: VideoService,
     ) { }
 
     @Post()

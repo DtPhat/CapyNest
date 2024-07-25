@@ -18,13 +18,13 @@ import { VocabularyModule } from "../vocabulary/vocabulary.module";
     ],
     providers: [
         {
-            provide: 'VOCABULARY_TAG_SERVICE_PHATTV',
+            provide: 'VOCABULARY_TAG_SERVICE',
             useClass: VocabularyTagService,
         }
     ],
     exports: [
         {
-            provide: 'VOCABULARY_TAG_SERVICE_PHATTV',
+            provide: 'VOCABULARY_TAG_SERVICE',
             useClass: VocabularyTagService,
         }
     ],

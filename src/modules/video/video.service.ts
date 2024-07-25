@@ -12,7 +12,7 @@ import { FilterVideoRequestDTO } from "./dtos/requests/filter-video.dto";
 @Injectable()
 export class VideoService {
     constructor(@InjectModel(Video.name) private VideoModel: Model<Video>,
-    @Inject('AUTH_SERVICE_TIENNT') private readonly authService: AuthService) { }
+    @Inject('AUTH_SERVICE') private readonly authService: AuthService) { }
 
     private async getAccountIdFromrequest(request: Request) {
         logging.info("get token from request", "createNewVideo()")

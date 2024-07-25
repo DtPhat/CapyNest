@@ -14,13 +14,13 @@ import { StoryModule } from "../story/story.module";
     ],
     providers: [
         {
-            provide: 'STORY-CATEGORY_SERVICE_PHATTV',
+            provide: 'STORY-CATEGORY_SERVICE',
             useClass: StoryCategoryService,
         }
     ],
     exports: [
         {
-            provide: 'STORY-CATEGORY_SERVICE_PHATTV',
+            provide: 'STORY-CATEGORY_SERVICE',
             useClass: StoryCategoryService,
         }
     ],

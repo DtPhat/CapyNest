@@ -9,7 +9,7 @@ import { CreateAccountRequestDTO } from "./dtos/requests/create-account-request.
 export class AccountController {
 
     constructor(
-        @Inject('ACCOUNT_SERVICE_PHATTV') private readonly accountService: AccountService,
+        @Inject('ACCOUNT_SERVICE') private readonly accountService: AccountService,
     ) { }
     @Post()
     async createNewAccount(@Body() dto: CreateAccountRequestDTO) {

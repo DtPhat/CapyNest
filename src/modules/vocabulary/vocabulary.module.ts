@@ -18,13 +18,13 @@ import { AuthModule } from "../auth/auth.module";
     ],
     providers: [
         {
-            provide: 'VOCABULARY_SERVICE_PHATTV',
+            provide: 'VOCABULARY_SERVICE',
             useClass: VocabularyService,
         }
     ],
     exports: [
         {
-            provide: 'VOCABULARY_SERVICE_PHATTV',
+            provide: 'VOCABULARY_SERVICE',
             useClass: VocabularyService,
         }
     ],

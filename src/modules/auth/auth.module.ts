@@ -19,12 +19,12 @@ dotenv.config();
     ],
     providers: [
         {
-            provide: 'AUTH_SERVICE_TIENNT',
+            provide: 'AUTH_SERVICE',
             useClass: AuthService,
         }
     ],
     exports: [
-        'AUTH_SERVICE_TIENNT',
+        'AUTH_SERVICE',
     ]
 })
 export class AuthModule { }

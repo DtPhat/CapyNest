@@ -9,7 +9,7 @@ import { Request } from "express";
 export class VocabularyController {
 
     constructor(
-        @Inject('VOCABULARY_SERVICE_PHATTV') private readonly vocabularyService: VocabularyService,
+        @Inject('VOCABULARY_SERVICE') private readonly vocabularyService: VocabularyService,
     ) { }
 
     @ApiBearerAuth()

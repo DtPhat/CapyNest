@@ -19,7 +19,7 @@ import { readFileSync } from "fs";
 export class StoryController {
 
     constructor(
-        @Inject('STORY_SERVICE_PHATTV') private readonly storyService: StoryService,
+        @Inject('STORY_SERVICE') private readonly storyService: StoryService,
     ) { }
 
     @Post()

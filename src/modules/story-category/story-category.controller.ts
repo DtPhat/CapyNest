@@ -8,7 +8,7 @@ import { CreateStoryCategoryRequestDTO } from "./dtos/requests/create-category-r
 export class StoryCategoryController {
 
     constructor(
-        @Inject('STORY-CATEGORY_SERVICE_PHATTV') private readonly storyCategoryService: StoryCategoryService,
+        @Inject('STORY-CATEGORY_SERVICE') private readonly storyCategoryService: StoryCategoryService,
     ) { }
 
     @Post()

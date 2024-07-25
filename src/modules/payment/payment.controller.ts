@@ -15,10 +15,10 @@ import { AccountDocument } from "../account/account.schema";
 export class PaymentController {
 
     constructor(
-        @Inject('MAIL_SERVICE_PHATTV') private readonly mailService: MailService,
-        @Inject('PAYMENT_SERVICE_PHATTV') private readonly paymentService: PaymentService,
-        @Inject('ACCOUNT_SERVICE_PHATTV') private readonly accountService: AccountService,
-        @Inject('AUTH_SERVICE_TIENNT') private readonly authService: AuthService
+        @Inject('MAIL_SERVICE') private readonly mailService: MailService,
+        @Inject('PAYMENT_SERVICE') private readonly paymentService: PaymentService,
+        @Inject('ACCOUNT_SERVICE') private readonly accountService: AccountService,
+        @Inject('AUTH_SERVICE') private readonly authService: AuthService
     ) { }
 
 
@@ -66,7 +66,7 @@ export class PaymentController {
             let tmnCode = "0HMW9F90"
             let secretKey = "4IKW54V2L7D1RN4L8PDKTP2Y2UP3O9BI"
             let vnpUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html"
-            let returnUrl = `https://capyventure.eastasia.cloudapp.azure.com/payment/vnpay_return/${packageTy}/${accId}`
+            let returnUrl = `https://capynest.onrender.com/payment/vnpay_return/${packageTy}/${accId}`
             let orderId = moment(date).format('DDHHmmss');
             let amount = 10000;
             if(packageTy === "yearly") {

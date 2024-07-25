@@ -15,13 +15,13 @@ import { AuthModule } from "../auth/auth.module";
     ],
     providers: [
         {
-            provide: 'PAYMENT_SERVICE_PHATTV',
+            provide: 'PAYMENT_SERVICE',
             useClass: PaymentService,
         }
     ],
     exports: [
         {
-            provide: 'PAYMENT_SERVICE_PHATTV',
+            provide: 'PAYMENT_SERVICE',
             useClass: PaymentService,
         }
     ],

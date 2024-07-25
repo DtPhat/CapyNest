@@ -14,13 +14,13 @@ import { AuthModule } from "../auth/auth.module";
     ],
     providers: [
         {
-            provide: 'VIDEO_SERVICE_PHATTV',
+            provide: 'VIDEO_SERVICE',
             useClass: VideoService,
         }
     ],
     exports: [
         {
-            provide: 'VIDEO_SERVICE_PHATTV',
+            provide: 'VIDEO_SERVICE',
             useClass: VideoService,
         }
     ],

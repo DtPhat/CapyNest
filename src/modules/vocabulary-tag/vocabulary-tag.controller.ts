@@ -9,7 +9,7 @@ import { CreateVocabularyTagRequestDTO } from "./dtos/requests/CreateVocabularyT
 export class VocabularyTagController {
 
     constructor(
-        @Inject('VOCABULARY_TAG_SERVICE_PHATTV') private readonly vocabularyTagService: VocabularyTagService,
+        @Inject('VOCABULARY_TAG_SERVICE') private readonly vocabularyTagService: VocabularyTagService,
     ) { }
 
     @Post()

@@ -8,7 +8,7 @@ import logging from "src/configs/logging";
 export class AuthController {
 
     constructor(
-        @Inject('AUTH_SERVICE_TIENNT') private readonly authService: AuthService,
+        @Inject('AUTH_SERVICE') private readonly authService: AuthService,
     ) { }
 
     @ApiBody({

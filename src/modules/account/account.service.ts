@@ -8,7 +8,7 @@ import { AuthService } from "../auth/auth.service";
 @Injectable()
 export class AccountService {
     constructor(@InjectModel(Account.name) private accountModel: Model<Account>,
-        @Inject(forwardRef(() => 'AUTH_SERVICE_TIENNT')) private readonly authService: AuthService) { }
+        @Inject(forwardRef(() => 'AUTH_SERVICE')) private readonly authService: AuthService) { }
 
     async createNewAccount(dto: CreateAccountRequestDTO): Promise<AccountDocument> {
         let newAccount: Account = {

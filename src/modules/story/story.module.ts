@@ -14,13 +14,13 @@ import { Image, ImageSchema } from "./image.schema";
     ],
     providers: [
         {
-            provide: 'STORY_SERVICE_PHATTV',
+            provide: 'STORY_SERVICE',
             useClass: StoryService,
         }
     ],
     exports: [
         {
-            provide: 'STORY_SERVICE_PHATTV',
+            provide: 'STORY_SERVICE',
             useClass: StoryService,
         }
     ],

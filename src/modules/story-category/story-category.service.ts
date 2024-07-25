@@ -11,7 +11,7 @@ import logging from "src/configs/logging";
 @Injectable()
 export class StoryCategoryService {
     constructor(@InjectModel(StoryCategory.name) private srotyCategoryModel: Model<StoryCategory>,
-        @Inject('STORY_SERVICE_PHATTV') private readonly storyService: StoryService) { }
+        @Inject('STORY_SERVICE') private readonly storyService: StoryService) { }
 
     async createNewCategory(dto: CreateStoryCategoryRequestDTO): Promise<StoryCategoryDocument> {
         let newCategory: StoryCategory = {

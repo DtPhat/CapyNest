@@ -14,13 +14,13 @@ import { AuthModule } from "../auth/auth.module";
     ],
     providers: [
         {
-            provide: 'ACCOUNT_SERVICE_PHATTV',
+            provide: 'ACCOUNT_SERVICE',
             useClass: AccountService,
         }
     ],
     exports: [
         {
-            provide: 'ACCOUNT_SERVICE_PHATTV',
+            provide: 'ACCOUNT_SERVICE',
             useClass: AccountService,
         }
     ],

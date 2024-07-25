@@ -12,8 +12,8 @@ import { VocabularyDocument } from "../vocabulary/vocabulary.schema";
 @Injectable()
 export class VocabularyTagService {
     constructor(@InjectModel(VocabularyTag.name) private vocabularyTagModel: Model<VocabularyTag>,
-        @Inject('AUTH_SERVICE_TIENNT') private readonly authService: AuthService,
-        @Inject(forwardRef(() => 'VOCABULARY_SERVICE_PHATTV')) private readonly vocabularyService: VocabularyService) { }
+        @Inject('AUTH_SERVICE') private readonly authService: AuthService,
+        @Inject(forwardRef(() => 'VOCABULARY_SERVICE')) private readonly vocabularyService: VocabularyService) { }
 
     async getVocabTagFromAccountId(accountId: string): Promise<VocabularyTagDocument[]> {
         return this.vocabularyTagModel.find({

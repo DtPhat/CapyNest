@@ -26,7 +26,7 @@ export class AuthService {
 
     constructor(
         private readonly jwtService: JwtService,
-        @Inject(forwardRef(() => 'ACCOUNT_SERVICE_PHATTV')) private readonly accountService: AccountService,
+        @Inject(forwardRef(() => 'ACCOUNT_SERVICE')) private readonly accountService: AccountService,
     ) { }
 
     private async generateToken(payload: any): Promise<string> {
