@@ -37,8 +37,30 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument>{
     return document
   }
 
-  async find(filterQuery: FilterQuery<TDocument>): Promise<TDocument> {
-    return this.model.find(filterQuery).lean<TDocument>(true);
+  async find(
+    filterQuery: FilterQuery<TDocument>,
+    sort?: { field: string, direction: 'asc' | 'desc' },
+    offset?: number,
+    limit?: number,
+  ): Promise<TDocument> {
+
+    const query = this.model.find(filterQuery);
+
+    if (sort && sort.field) {
+      query.sort({ [sort.field]: sort.direction === 'asc' ? 1 : -1 });
+    }
+
+    if (typeof offset === 'number') {
+      query.skip(offset);
+    }
+
+    if (typeof limit === 'number') {
+      query.limit(limit);
+    }
+
+    const results = await query.lean<TDocument>(true)
+
+    return results;
   }
 
   async findOneAndDelete(
@@ -46,4 +68,6 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument>{
   ): Promise<TDocument> {
     return this.model.findOneAndDelete(filterQuery).lean<TDocument>(filterQuery).lean<TDocument>(true);
   }
+
+
 }

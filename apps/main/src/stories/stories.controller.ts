@@ -1,11 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { StoriesService } from './stories.service';
 import { CreateStoryDto } from './dto/create-story.dto';
 import { UpdateStoryDto } from './dto/update-story.dto';
+import { Sort } from '../types/global.types';
+import { FilterStoriesDto } from './dto/filter-stories.dto';
 
 @Controller('stories')
 export class StoriesController {
-  constructor(private readonly storiesService: StoriesService) {}
+  constructor(private readonly storiesService: StoriesService) { }
 
   @Post()
   create(@Body() createStoryDto: CreateStoryDto) {
@@ -13,8 +15,27 @@ export class StoriesController {
   }
 
   @Get()
-  findAll() {
-    return this.storiesService.findAll();
+  findAll(
+    @Query("page") page: number = 1,
+    @Query("size") size: number = 10,
+    @Query("title") title: string = '',
+    @Query("category") category: string = "",
+    @Query("level") level: string = "",
+    @Query("sortBy") sortBy: string = "_id",
+    @Query("direction") direction: "asc" | "desc" = "asc"
+  ) {
+    const filterDto: FilterStoriesDto = {
+      title,
+      category,
+      level,
+    }
+
+    const sort: Sort = {
+      field: sortBy,
+      direction: direction
+    }
+
+    return this.storiesService.findAll(page, size, sort, filterDto);
   }
 
   @Get(':id')

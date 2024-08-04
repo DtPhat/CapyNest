@@ -9,8 +9,6 @@ export class Story extends AbstractDocument {
   @Prop({ required: true })
   author: string;
 
-  // @Prop({ required: true, default: 0 })
-  // views: number;
 
   @Prop({ required: true })
   description: string;
@@ -24,8 +22,6 @@ export class Story extends AbstractDocument {
   @Prop({ required: true })
   category: string;
 
-  // @Prop({ required: true, default: [] })
-  // comment: Comment[];
 
   @Prop({ required: true })
   level: string;
@@ -44,7 +40,6 @@ export interface Content {
   chapter: string,
   content: string
 }
-
 
 
 export const StorySchema = SchemaFactory.createForClass(Story);

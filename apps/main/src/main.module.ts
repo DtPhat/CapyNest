@@ -8,6 +8,7 @@ import { ConfigModule } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
 import * as Joi from 'joi'
 import { JwtModule } from '@nestjs/jwt';
+import { VideosModule } from './videos/videos.module';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { JwtModule } from '@nestjs/jwt';
     AuthModule,
     LoggerModule,
     UsersModule,
-    JwtModule
+    VideosModule,
   ],
   // controllers: [MainController],
   // providers: [MainService],

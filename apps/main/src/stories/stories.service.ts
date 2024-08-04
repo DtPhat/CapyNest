@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { CreateStoryDto } from './dto/create-story.dto';
 import { UpdateStoryDto } from './dto/update-story.dto';
 import { StoriesRepository } from './stories.repository';
+import { Sort } from '../types/global.types';
+import { FilterStoriesDto } from './dto/filter-stories.dto';
 
 @Injectable()
 export class StoriesService {
@@ -14,8 +16,22 @@ export class StoriesService {
     });
   }
 
-  findAll() {
-    return this.storiesRepository.find({})
+  async findAll(page: number, size: number, sort: Sort, filterDto: FilterStoriesDto) {
+    let offset = (page - 1) * size;
+    let limit = Number(size);
+
+    const queryFilter: {
+      title?: { $regex: RegExp };
+      level?: { $regex: RegExp };
+      category?: { $regex: RegExp };
+    } = {};
+
+    if (filterDto.title) queryFilter.title = { $regex: new RegExp(filterDto.title, "i") };
+    if (filterDto.level) queryFilter.level = { $regex: new RegExp(filterDto.level, "i") };
+    if (filterDto.category) queryFilter.category = { $regex: new RegExp(filterDto.category, "i") };
+
+    const result = await this.storiesRepository.find(queryFilter, sort, offset, limit)
+    return result
   }
 
   findOne(_id: number) {
