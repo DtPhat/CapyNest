@@ -10,8 +10,6 @@ export class CreateStoryDto {
   @IsNotEmpty()
   author: string;
 
-  // @Prop({ required: true, default: 0 })
-  // views: number;
   @IsString()
   @IsNotEmpty()
   description: string;
@@ -27,8 +25,6 @@ export class CreateStoryDto {
   @IsNotEmpty()
   category: string;
 
-  // @Prop({ required: true, default: [] })
-  // comment: Comment[];
 
   level: string;
 

@@ -3,7 +3,7 @@ import { VideosService } from './videos.service';
 import { CreateVideoDto } from './dto/create-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
 import { FilterVideosDto } from './dto/filter-videos.dto';
-import { Sort } from '../types/global.types';
+import { Sort } from '@app/common';
 
 @Controller('videos')
 export class VideosController {
@@ -42,7 +42,7 @@ export class VideosController {
   @Get(':id')
   findOne(@Param('id') id: string) {
 
-    return this.videosService.findOne(+id);
+    return this.videosService.findOne(id);
   }
 
   @Patch(':id')

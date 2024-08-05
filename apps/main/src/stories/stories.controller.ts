@@ -2,8 +2,8 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestj
 import { StoriesService } from './stories.service';
 import { CreateStoryDto } from './dto/create-story.dto';
 import { UpdateStoryDto } from './dto/update-story.dto';
-import { Sort } from '../types/global.types';
 import { FilterStoriesDto } from './dto/filter-stories.dto';
+import { Sort } from '@app/common';
 
 @Controller('stories')
 export class StoriesController {

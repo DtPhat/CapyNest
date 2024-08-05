@@ -42,7 +42,7 @@ export class AuthService {
       }
     }
 
-    let jwt = await this.generateToken({ userId: user._id, email: user.email })
+    let jwt = await this.generateToken({ _id: user._id, email: user.email })
     return {
       token: jwt,
       userInfo: user,

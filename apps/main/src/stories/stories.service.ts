@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { CreateStoryDto } from './dto/create-story.dto';
 import { UpdateStoryDto } from './dto/update-story.dto';
 import { StoriesRepository } from './stories.repository';
-import { Sort } from '../types/global.types';
 import { FilterStoriesDto } from './dto/filter-stories.dto';
+import { Sort } from '@app/common';
 
 @Injectable()
 export class StoriesService {

@@ -3,7 +3,7 @@ import { CreateVideoDto } from './dto/create-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
 import { VideosRepository } from './videos.repository';
 import { FilterVideosDto } from './dto/filter-videos.dto';
-import { Sort } from '../types/global.types';
+import { Sort } from '@app/common';
 
 @Injectable()
 export class VideosService {
@@ -32,8 +32,8 @@ export class VideosService {
     return result
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} video`;
+  findOne(_id: string) {
+    return this.videosRepository.findOne({ _id })
   }
 
   update(id: number, updateVideoDto: UpdateVideoDto) {

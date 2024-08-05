@@ -8,6 +8,10 @@ import { Request } from 'express';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 
+type GuardUser = {
+  _id: string,
+  gmail: string,
+}
 @Injectable()
 export class JwtAuthGuard implements CanActivate {
   constructor(

@@ -6,9 +6,9 @@ import { DatabaseModule } from '@app/common';
 import { Story, StorySchema } from './models/story.schema';
 
 @Module({
-  imports: [DatabaseModule.forFeature([
-    { name: Story.name, schema: StorySchema },
-  ])],
+  imports: [
+    DatabaseModule.forFeature([{ name: Story.name, schema: StorySchema }])
+  ],
   controllers: [StoriesController],
   providers: [StoriesService, StoriesRepository],
 })

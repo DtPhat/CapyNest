@@ -42,7 +42,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument>{
     sort?: { field: string, direction: 'asc' | 'desc' },
     offset?: number,
     limit?: number,
-  ): Promise<TDocument> {
+  ): Promise<TDocument[]> {
 
     const query = this.model.find(filterQuery);
 
@@ -58,7 +58,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument>{
       query.limit(limit);
     }
 
-    const results = await query.lean<TDocument>(true)
+    const results = await query.lean<TDocument[]>(true)
 
     return results;
   }
