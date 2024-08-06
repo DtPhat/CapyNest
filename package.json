@@ -1,5 +1,5 @@
 {
-  "name": "capy-nest",
+  "name": "CapyNest",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -37,7 +37,6 @@
     "@types/multer": "^1.4.11",
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
-    "capy-nest": "file:",
     "CapyNest": "file:",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
