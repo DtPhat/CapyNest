@@ -11,7 +11,7 @@ export class VideosService {
     private readonly videosRepository: VideosRepository,
   ) { }
   create(createVideoDto: CreateVideoDto) {
-    return 'This action adds a new video';
+    return this.videosRepository.create(createVideoDto);
   }
 
   async findAll(page: number, size: number, sort: Sort, filterDto: FilterVideosDto) {
@@ -36,11 +36,14 @@ export class VideosService {
     return this.videosRepository.findOne({ _id })
   }
 
-  update(id: number, updateVideoDto: UpdateVideoDto) {
-    return `This action updates a #${id} video`;
+  update(_id: string, updateVideoDto: UpdateVideoDto) {
+    return this.videosRepository.findOneAndUpdate(
+      { _id },
+      { $set: updateVideoDto }
+    );
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} video`;
+  remove(_id: string) {
+    return this.videosRepository.findOneAndDelete({ _id });
   }
 }

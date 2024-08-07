@@ -37,6 +37,7 @@
     "@types/multer": "^1.4.11",
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
+    "CapyNest": "file:",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "compression": "^1.7.4",

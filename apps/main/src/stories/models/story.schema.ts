@@ -38,7 +38,8 @@ export interface Comment {
 
 export interface Content {
   chapter: string,
-  content: string
+  title: string,
+  text: string
 }
 
 

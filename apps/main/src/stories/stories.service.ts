@@ -10,10 +10,8 @@ export class StoriesService {
   constructor(
     private readonly storiesRepository: StoriesRepository,
   ) { }
-  create(createStoryDto: CreateStoryDto) {
-    return this.storiesRepository.create({
-      ...createStoryDto,
-    });
+  async create(createStoryDto: CreateStoryDto) {
+    return this.storiesRepository.create(createStoryDto)
   }
 
   async findAll(page: number, size: number, sort: Sort, filterDto: FilterStoriesDto) {
@@ -34,7 +32,7 @@ export class StoriesService {
     return result
   }
 
-  findOne(_id: number) {
+  async findOne(_id: string) {
     return this.storiesRepository.findOne({ _id });
   }
 
@@ -45,7 +43,7 @@ export class StoriesService {
     );
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} story`;
+  remove(_id: string) {
+    return this.storiesRepository.findOneAndDelete({ _id });
   }
 }

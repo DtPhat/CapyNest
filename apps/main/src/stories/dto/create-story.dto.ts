@@ -1,4 +1,4 @@
-import { IsArray, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsArray, IsBoolean, IsNotEmpty, IsNumber, IsString } from "class-validator";
 import { Content } from "../models/story.schema";
 
 export class CreateStoryDto {
@@ -25,8 +25,9 @@ export class CreateStoryDto {
   @IsNotEmpty()
   category: string;
 
-
+  @IsString()
   level: string;
 
+  @IsBoolean()
   isPremium: boolean
 }

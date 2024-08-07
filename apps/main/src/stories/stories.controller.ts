@@ -39,17 +39,17 @@ export class StoriesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.storiesService.findOne(+id);
+  async findOne(@Param('id')  id: string) {
+    return this.storiesService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateStoryDto: UpdateStoryDto) {
+  async update(@Param('id') id: string, @Body() updateStoryDto: UpdateStoryDto) {
     return this.storiesService.update(id, updateStoryDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.storiesService.remove(+id);
+  async remove(@Param('id') id: string) {
+    return this.storiesService.remove(id);
   }
 }

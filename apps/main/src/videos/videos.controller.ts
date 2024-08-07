@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, Put } from '@nestjs/common';
 import { VideosService } from './videos.service';
 import { CreateVideoDto } from './dto/create-video.dto';
 import { UpdateVideoDto } from './dto/update-video.dto';
@@ -10,7 +10,7 @@ export class VideosController {
   constructor(private readonly videosService: VideosService) { }
 
   @Post()
-  create(@Body() createVideoDto: CreateVideoDto) {
+  async create(@Body() createVideoDto: CreateVideoDto) {
     return this.videosService.create(createVideoDto);
   }
 
@@ -47,11 +47,16 @@ export class VideosController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateVideoDto: UpdateVideoDto) {
-    return this.videosService.update(+id, updateVideoDto);
+    return this.videosService.update(id, updateVideoDto);
+  }
+
+  @Put(':id')
+  updateWithPut(@Param('id') id: string, @Body() updateVideoDto: UpdateVideoDto) {
+    return this.videosService.update(id, updateVideoDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.videosService.remove(+id);
+    return this.videosService.remove(id);
   }
 }
