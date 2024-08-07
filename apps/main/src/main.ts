@@ -20,6 +20,7 @@ async function bootstrap() {
   });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }))
   app.useLogger(app.get(Logger))
-  await app.listen(4000);
+  await app.listen(4000, "0.0.0.0");
+
 }
 bootstrap();
