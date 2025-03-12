@@ -3,7 +3,7 @@ import { CollectionsService } from './collections.service';
 import { CreateCollectionDto } from './dto/create-collection.dto';
 import { UpdateCollectionDto } from './dto/update-collection.dto';
 import { CurrentUser } from '@app/common';
-import { JwtAuthGuard } from '../guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../../../../libs/common/src/guards/jwt-auth.guard';
 
 @UseGuards(JwtAuthGuard)
 @Controller('collections')
@@ -16,7 +16,6 @@ export class CollectionsController {
     @Body() createCollectionDto: CreateCollectionDto) {
     return this.collectionsService.create(currentUser._id, createCollectionDto);
   }
-
 
   @Get()
   findAllByUser(

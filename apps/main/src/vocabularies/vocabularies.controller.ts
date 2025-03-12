@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@n
 import { VocabulariesService } from './vocabularies.service';
 import { CreateVocabularyDto } from './dto/create-vocabulary.dto';
 import { UpdateVocabularyDto } from './dto/update-vocabulary.dto';
-import { JwtAuthGuard } from '../guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../../../../libs/common/src/guards/jwt-auth.guard';
 import { Types } from 'mongoose';
 
 @UseGuards(JwtAuthGuard)

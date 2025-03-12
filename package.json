@@ -24,6 +24,7 @@
     "@fastify/cors": "^8.5.0",
     "@fastify/multipart": "^8.1.0",
     "@fastify/static": "^6.12.0",
+    "@google/generative-ai": "^0.22.0",
     "@nestjs-modules/mailer": "^2.0.2",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.2.3",
@@ -110,7 +111,10 @@
       "<rootDir>/apps/"
     ],
     "moduleNameMapper": {
-      "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1"
+      "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1",
+      "^@app/integrations/gemini(|/.*)$": "<rootDir>/libs/integrations/gemini/src/$1",
+      "^@app/external/gemini(|/.*)$": "<rootDir>/libs/external/gemini/src/$1",
+      "^@app/external(|/.*)$": "<rootDir>/libs/external/src/$1"
     }
   }
 }

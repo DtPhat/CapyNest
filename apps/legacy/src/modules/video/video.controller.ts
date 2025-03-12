@@ -27,7 +27,7 @@ export class VideoController {
     }
 
     @Get("/")
-    async GetAllStory(
+    async GetAllVideos(
         @Query("page") page: number = 1,
         @Query("size") size: number = 10,
         @Query("caption") caption: string = '',
@@ -46,7 +46,7 @@ export class VideoController {
                     direction: direction
                 }
             }
-            let result: any = await this.VideoService.getAll(page, size, filterDTO);
+            let result = await this.VideoService.getAll(page, size, filterDTO);
             return {
                 statusCode: 200,
                 data: result

@@ -10,7 +10,7 @@ import * as Joi from 'joi'
 import { VideosModule } from './videos/videos.module';
 import { CollectionsModule } from './collections/collections.module';
 import { VocabulariesModule } from './vocabularies/vocabularies.module';
-
+import { GeminiModule } from '@app/external';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -29,6 +29,7 @@ import { VocabulariesModule } from './vocabularies/vocabularies.module';
     VideosModule,
     CollectionsModule,
     VocabulariesModule,
+    GeminiModule,
   ],
   // controllers: [MainController],
   // providers: [MainService],

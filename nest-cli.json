@@ -40,6 +40,33 @@
       "compilerOptions": {
         "tsConfigPath": "apps/main/tsconfig.app.json"
       }
+    },
+    "integrations/gemini": {
+      "type": "library",
+      "root": "libs/integrations/gemini",
+      "entryFile": "index",
+      "sourceRoot": "libs/integrations/gemini/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/integrations/gemini/tsconfig.lib.json"
+      }
+    },
+    "external/gemini": {
+      "type": "library",
+      "root": "libs/external/gemini",
+      "entryFile": "index",
+      "sourceRoot": "libs/external/gemini/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/external/gemini/tsconfig.lib.json"
+      }
+    },
+    "external": {
+      "type": "library",
+      "root": "libs/external",
+      "entryFile": "index",
+      "sourceRoot": "libs/external/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/external/tsconfig.lib.json"
+      }
     }
   },
   "monorepo": true,

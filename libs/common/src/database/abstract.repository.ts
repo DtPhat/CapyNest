@@ -69,5 +69,7 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument>{
     return this.model.findOneAndDelete(filterQuery).lean<TDocument>(filterQuery).lean<TDocument>(true);
   }
 
-
+  async countDocuments(filterQuery: FilterQuery<TDocument>): Promise<number> {
+    return this.model.countDocuments(filterQuery)
+  }
 }

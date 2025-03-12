@@ -24,6 +24,24 @@
       ],
       "@app/common/*": [
         "libs/common/src/*"
+      ],
+      "@app/integrations/gemini": [
+        "libs/integrations/gemini/src"
+      ],
+      "@app/integrations/gemini/*": [
+        "libs/integrations/gemini/src/*"
+      ],
+      "@app/external/gemini": [
+        "libs/external/gemini/src"
+      ],
+      "@app/external/gemini/*": [
+        "libs/external/gemini/src/*"
+      ],
+      "@app/external": [
+        "libs/external/src"
+      ],
+      "@app/external/*": [
+        "libs/external/src/*"
       ]
     }
   }
