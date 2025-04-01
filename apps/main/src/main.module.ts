@@ -11,6 +11,7 @@ import { VideosModule } from './videos/videos.module';
 import { CollectionsModule } from './collections/collections.module';
 import { VocabulariesModule } from './vocabularies/vocabularies.module';
 import { GeminiModule } from '@app/external';
+import { AdminModule } from './admin/admin.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -30,6 +31,7 @@ import { GeminiModule } from '@app/external';
     CollectionsModule,
     VocabulariesModule,
     GeminiModule,
+    AdminModule,
   ],
   // controllers: [MainController],
   // providers: [MainService],
