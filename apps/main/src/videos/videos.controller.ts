@@ -10,7 +10,11 @@ export class VideosController {
   constructor(private readonly videosService: VideosService) { }
 
   @Post()
-  async create(@Body() createVideoDto: CreateVideoDto) {
+  // async create(@Body() createVideoDto: CreateVideoDto) {
+  //   return this.videosService.create(createVideoDto);
+  // }
+
+  async create(@Body() createVideoDto) {
     return this.videosService.create(createVideoDto);
   }
 
@@ -59,4 +63,12 @@ export class VideosController {
   remove(@Param('id') id: string) {
     return this.videosService.remove(id);
   }
+
+  @Post('parsed-transcript')
+  async getParsedTranscript(
+    @Body() stringTranscript: string,
+  ) {
+    return this.videosService.parseTranscript(stringTranscript);
+  }
+
 }

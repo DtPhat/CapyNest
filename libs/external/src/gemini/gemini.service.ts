@@ -14,6 +14,10 @@ export class GeminiService {
       throw new HttpException('Google AI API key is missing!', HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    if(!prompt){
+      return "No prompt provided";
+    }
+
     try {
       const genAI = new GoogleGenerativeAI(this.GOOGLE_AI_API_KEY);
       const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
